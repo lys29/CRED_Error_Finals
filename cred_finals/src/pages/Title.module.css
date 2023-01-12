@@ -1,0 +1,158 @@
+.container {
+    background-color: white;
+}
+
+.con {
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    float: left;
+    background-color: white;
+    background-image: url('../images/left.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1024px;
+    width: 616px;
+    border: 0px solid transparent;
+}
+
+.left1 {
+    margin-left: 70px;
+    margin-top: 100px;
+}
+
+.above {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5D1C1C;
+    width: 616px;
+    height: 39px;
+}
+
+.above img {
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+}
+
+.above h6 {
+    margin-right: 250px;
+    font-size: 13px;
+    color: white;
+}
+
+.right {
+    float: right;
+    background-color: white;
+    background-image: url('../images/right.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1024px;
+    width: 828px;
+    border: 0px solid transparent;
+}
+
+.spread {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spread1 {
+     margin-right: 70px;
+}
+
+.left1 h2 {
+    font-size: 30px;
+}
+
+.left1 p {
+    font-size: 16px;
+    color: #818181;
+    margin-top: -20px;
+}
+
+.left1 input[type=ln] {
+    width: 226px;
+    height: 60px;
+    border: 0px;
+    border: 1px solid #D1D1D1;
+    font-size: 16px;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.left1 input[type=fn] {
+    width: 226px;
+    height: 60px;
+    border: 0px;
+    border: 1px solid #D1D1D1;
+    font-size: 16px;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.left1 input[type=ea] {
+    width: 467px;
+    height: 60px;
+    border: 0px;
+    border: 1px solid #D1D1D1;
+    font-size: 16px;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.left1 input[type=pn] {
+    width: 226px;
+    height: 60px;
+    border: 0px;
+    border: 1px solid #D1D1D1;
+    font-size: 16px;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.left1 input[type=alumni] {
+    width: 226px;
+    height: 60px;
+    border: 0px;
+    border: 1px solid #D1D1D1;
+    font-size: 16px;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.left1 textarea {
+    height: 125px;
+    width: 467px;
+    border-radius: 10px;
+    background-color: white;
+    border: 0px;
+    border: 1px solid #D1D1D1;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.spread Button {
+    height: 60px;
+    width: 467px;
+    border-radius: 10px;
+    background-color: #B71921;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.tick {
+    margin-left: 250px;
+    margin-top: -40px;
+}
