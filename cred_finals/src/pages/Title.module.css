@@ -82,7 +82,7 @@
     border: 0px;
     border: 1px solid #D1D1D1;
     font-size: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     background-color: white;
     border-radius: 10px;
 }
@@ -93,7 +93,7 @@
     border: 0px;
     border: 1px solid #D1D1D1;
     font-size: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     background-color: white;
     border-radius: 10px;
 }
@@ -104,7 +104,18 @@
     border: 0px;
     border: 1px solid #D1D1D1;
     font-size: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.left1 input[type=add] {
+    width: 467px;
+    height: 60px;
+    border: 0px;
+    border: 1px solid #D1D1D1;
+    font-size: 16px;
+    margin-bottom: 30px;
     background-color: white;
     border-radius: 10px;
 }
@@ -115,7 +126,7 @@
     border: 0px;
     border: 1px solid #D1D1D1;
     font-size: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     background-color: white;
     border-radius: 10px;
 }
@@ -126,7 +137,7 @@
     border: 0px;
     border: 1px solid #D1D1D1;
     font-size: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     background-color: white;
     border-radius: 10px;
 }
@@ -139,7 +150,7 @@
     border: 0px;
     border: 1px solid #D1D1D1;
     font-size: 16px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .spread Button {
@@ -150,9 +161,6 @@
     color: white;
     font-size: 20px;
     margin-top: 20px;
-}
-
-.tick {
-    margin-left: 250px;
-    margin-top: -40px;
+    border: 1px solid transparent;
+    cursor: pointer;
 }

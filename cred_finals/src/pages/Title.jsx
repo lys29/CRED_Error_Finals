@@ -1,18 +1,45 @@
 import styles from './Title.module.css';
 import Logo from '../images/logo.png';
-import Button from './Button.jsx';
-import Swal from "sweetalert2";
+import { useState } from 'react';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 //Done with the Frontend - dana
 const Title = () => {
+    const [ registerFname, setRegisterFname ] = useState('');
+    const [ registerLname, setRegisterLname ] = useState('');
+    const [ registerEmail, setRegisterEmail ] = useState('');
+    const [ registerAddress, setRegisterAddress ] = useState('');
+    const [ registerPnumber, setRegisterPnumber ] = useState('');
+    const [ registerAlumni, setRegisterAlumni ] = useState('');
+    const [ registerReason, setRegisterReason ] = useState('');
+
     const Submit = () => {
         Swal.fire({
             icon: "success",
-            title:"SUCCESSFULLY SUBMIT",
-            text: "You have successfully submit your registration form!",
-            showDenyButton: false,
-            confirmButtonText: 'Ok',
+            title: "",
+            text: "Your registration had been send!",
+            showConfirmButton: true
         })
-    }
+        axios({
+            method: "post",
+            data: {
+                Fname: registerFname,
+                Lname: registerLname,
+                Email: registerEmail,
+                Address: registerAddress,
+                Pnumber: registerPnumber,
+                Alumni: registerAlumni,
+                Reason: registerReason
+
+            },
+            withCredentials: true,
+            url: "http://localhost:3000/"
+        }).then((response) => {
+            if(response.data.message === "Username Already Taken"){
+                console.log('done!');
+            }
+        })
+    };
     return (
         <div>
             <div className={styles.container}>
@@ -26,31 +53,28 @@ const Title = () => {
                                     <h2>Registration Form</h2>
                                         <p>Please enter your following details to register</p>
                                         <div className={styles.spread}>
-                                            <input type='fn' placeholder='First Name'></input>
+                                            <input type='fn' onChange={e => setRegisterFname(e.target.value)} placeholder='First Name'></input>
                                             <div className={styles.spread1}>
-                                                <input type='ln' placeholder='Last Name'></input>
+                                                <input type='ln' onChange={e => setRegisterLname(e.target.value)} placeholder='Last Name'></input>
                                             </div>
                                         </div>
                                         <div className={styles.spread}>
-                                            <input type='ea' placeholder='Email Address'></input>
+                                            <input type='ea' onChange={e => setRegisterEmail(e.target.value)} placeholder='Email Address'></input>
                                         </div>
                                         <div className={styles.spread}>
-                                            <input type='pn' placeholder='Phone Number'></input>
+                                            <input type='add' onChange={e => setRegisterAddress(e.target.value)} placeholder='Address'></input>
+                                        </div>
+                                        <div className={styles.spread}>
+                                            <input type='pn' onChange={e => setRegisterPnumber(e.target.value)} placeholder='Phone Number'></input>
                                             <div className={styles.spread1}>
-                                                    <input type='alumni' placeholder='Old TUP Student?'></input>
+                                                    <input type='alumni' onChange={e => setRegisterAlumni(e.target.value)} placeholder='Old TUP Student?'></input>
                                             </div>
                                         </div>
-                                        <div className={styles.tick}>
-                                            <input type="checkbox" id="yes" name="yes"></input>
-                                            <label for="yes">Yes</label>
-                                            <input type="checkbox" id="no" name="no"></input>
-                                            <label for="no">No</label>
+                                        <div className={styles.spread}>
+                                            <textarea rows="3" cols="30" onChange={e => setRegisterReason(e.target.value)} placeholder='Why do you want to study here?'></textarea>
                                         </div>
                                         <div className={styles.spread}>
-                                            <textarea rows="3" cols="30" placeholder='Why do you want to study here?'></textarea>
-                                        </div>
-                                        <div className={styles.spread}>
-                                            <Button><strong onClick={Submit}>Submit</strong></Button>
+                                            <button onClick={Submit}><strong>Submit</strong></button>
                                         </div>
                         </div>
                     </div>
