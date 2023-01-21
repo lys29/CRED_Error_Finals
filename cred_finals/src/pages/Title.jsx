@@ -10,15 +10,33 @@ const Title = () => {
     const [ registerEmail, setRegisterEmail ] = useState('');
     const [ registerAddress, setRegisterAddress ] = useState('');
     const [ registerPnumber, setRegisterPnumber ] = useState('');
-    const [ registerAlumni, setRegisterAlumni ] = useState('');
+    const [ selectedValue, setSelectedValue ] = useState('');
     const [ registerReason, setRegisterReason ] = useState('');
+
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value);
+    }
 
     const Submit = () => {
         Swal.fire({
             icon: "success",
             title: "",
-            text: "Your registration had been send!",
+            text: "Your registration has been confirmed",
             showConfirmButton: true
+            //buttons: {
+                //cancel: "No",
+                //confirm: "Yes"
+              //},
+              //dangerMode: true,
+            //}).then((willDelete) => {
+              //if (willDelete) {
+               // swal("Poof! Your imaginary file has been deleted!", {
+                  //icon: "success",
+                //});
+              //} else {
+                //swal("Your imaginary file is safe!");
+              //}
+            //});
         })
         axios({
             method: "post",
@@ -28,9 +46,8 @@ const Title = () => {
                 Email: registerEmail,
                 Address: registerAddress,
                 Pnumber: registerPnumber,
-                Alumni: registerAlumni,
+                Alumni: selectedValue,
                 Reason: registerReason
-
             },
             withCredentials: true,
             url: "http://localhost:3000/"
@@ -65,9 +82,17 @@ const Title = () => {
                                             <input type='add' onChange={e => setRegisterAddress(e.target.value)} placeholder='Address'></input>
                                         </div>
                                         <div className={styles.spread}>
-                                            <input type='pn' onChange={e => setRegisterPnumber(e.target.value)} placeholder='Phone Number'></input>
-                                            <div className={styles.spread1}>
-                                                    <input type='alumni' onChange={e => setRegisterAlumni(e.target.value)} placeholder='Old TUP Student?'></input>
+                                            <p>+63</p><input type='pn' onChange={e => setRegisterPnumber(e.target.value)} placeholder='Phone Number'></input>
+                                            <div className={styles.spread2}>
+                                                    <div className={styles.alum}><p>Old TUP Student?</p></div>
+                                                    <div className={styles.radioform}>
+                                                        <form>
+                                                        <label for="yes">Yes</label>
+                                                        <input type="radio" onChange={handleChange} name="yesorno" value="yes"></input>
+                                                        <label for="no">No</label>
+                                                        <input type="radio" onChange={handleChange} name="yesorno" value="no"></input>
+                                                        </form>
+                                                    </div>
                                             </div>
                                         </div>
                                         <div className={styles.spread}>

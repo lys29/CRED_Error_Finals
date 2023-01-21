@@ -28,7 +28,7 @@ connection.connect(function (err) {
 app.post("/", (req, res) => {
   // insert query to database
   connection.query(
-    "INSERT IGNORE INTO cred_errors_finaltable (Fname, Lname, Email, Address, Pnumber, Alumni, Reason) VALUES(?, ?, ?, ?, ?, ?, ?)",
+    "INSERT IGNORE INTO cred_errors (Fname, Lname, Email, Address, Pnumber, Alumni, Reason) VALUES(?, ?, ?, ?, ?, ?, ?)",
     [req.body.Fname, req.body.Lname, req.body.Email, req.body.Address, req.body.Pnumber, req.body.Alumni, req.body.Reason],
     (err, results) => {
       if (results?.affectedRows > 0) {

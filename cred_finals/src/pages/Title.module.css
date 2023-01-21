@@ -66,6 +66,11 @@
      margin-right: 70px;
 }
 
+.spread2 {
+    margin-right: 70px;
+    margin-bottom: -30px;
+}
+
 .left1 h2 {
     font-size: 30px;
 }
@@ -163,4 +168,35 @@
     margin-top: 20px;
     border: 1px solid transparent;
     cursor: pointer;
+}
+
+.alum {
+    color: gray;
+    margin-top: -30px;
+    margin-right: 50px;
+}
+
+.alum p {
+    margin-left: 20px;
+}
+
+.spread2 {
+    margin-top: -50px;
+    margin-left: -10px;
+}
+
+.spread2 form {
+    margin-left: 30px;
+    margin-top: -10px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+
+.radioform {
+    margin-left: -10px;
+}
+
+.spread p {
+    font-size: 16px;
 }
